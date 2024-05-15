@@ -245,9 +245,11 @@ def get_info(session, agency, version, fg, ts, segment, element, code, name, fty
     #     create_word_doc_with_dict({"results": details})
     return details
 
-
 def main(args):
     print("Invoked main")
+
+def main1(args):
+    print("Invoked main1")
     driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
     details = []
     with driver.session() as session:
