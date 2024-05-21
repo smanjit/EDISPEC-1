@@ -236,7 +236,7 @@ def get_info(session, agency, version, fg, ts, segment, element, code, name, fty
     return details
 
 
-def main1(args):
+def main(args):
     driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
     details = []
     with driver.session() as session:
@@ -295,10 +295,9 @@ def main1(args):
 # main({"agency": "E", "version": "092001", "fg": "CONEST", "tset": "CONEST", "segment": "BII",
 #             "element": "7429", "code": "2", "name": "kedar", "ftype": "docx"})
 
+
 def main(args):
     print("Invoked main");
-    driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
-    return {
-          "body": "success"
-      }
+    #driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
+    return {"body": "success"}
 
