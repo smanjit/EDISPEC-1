@@ -1,5 +1,4 @@
 neo4j
 reportlab
-pprint
 json
 io
