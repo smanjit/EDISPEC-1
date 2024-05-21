@@ -247,6 +247,7 @@ def get_info(session, agency, version, fg, ts, segment, element, code, name, fty
 
 def main(args):
     print("Invoked main")
+    return {"results": "test main"}
 
 def main1(args):
     print("Invoked main1")
