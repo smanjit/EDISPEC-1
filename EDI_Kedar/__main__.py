@@ -54,31 +54,6 @@ def multi_part_upload(bucket_name, item_name, file_data):
     except Exception as e:
         print("Unable to complete multi-part upload: {0}".format(e))
         
-def create_pdf_with_dict(data_dict):
-    buffer = BytesIO()  # Create a BytesIO buffer to hold the PDF content
-    doc = SimpleDocTemplate(buffer, pagesize=letter)
-
-    # Set up the styles for the text
-    styles = getSampleStyleSheet()
-    style_normal = styles['Normal']
-
-    # Convert the dictionary to a pretty-printed JSON-formatted string
-    json_string = json.dumps(data_dict, indent=4)
-    pretty_json = pprint.pformat(json.loads(json_string))
-
-    # Split the pretty-printed JSON string into lines
-    lines = pretty_json.splitlines()
-
-    # Create a list of Paragraph objects with appropriate line breaks
-    text_content = [Paragraph(line, style_normal) for line in lines]
-
-    # Build the PDF document
-    doc.build(text_content)
-
-    # Move the buffer's pointer back to the beginning
-    buffer.seek(0)
-
-    return buffer
 
 def main(args):
     print("Invoked main");
