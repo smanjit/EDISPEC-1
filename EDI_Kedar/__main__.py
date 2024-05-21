@@ -25,18 +25,6 @@ cos = ibm_boto3.resource("s3",
     endpoint_url=COS_ENDPOINT
 )
 
-'''
-{
-    "apikey": "9ITYiSk-BpydNpRFnwTczyliKE5VFqaTZEPtkhI_5MeH",
-    "endpoints": "https://control.cloud-object-storage.cloud.ibm.com/v2/endpoints",
-    "iam_apikey_description": "Auto-generated for key crn:v1:bluemix:public:cloud-object-storage:global:a/010dcec46cce40a9a8555682c8c82e84:73483270-b430-45f6-aec0-595bbac30668:resource-key:89a2eb67-d52c-40b4-8d45-1a26870d2942",
-    "iam_apikey_name": "edi-cloud-func",
-    "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Writer",
-    "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/010dcec46cce40a9a8555682c8c82e84::serviceid:ServiceId-f61fe320-d830-4f83-bb07-e31daa91878d",
-    "resource_instance_id": "crn:v1:bluemix:public:cloud-object-storage:global:a/010dcec46cce40a9a8555682c8c82e84:73483270-b430-45f6-aec0-595bbac30668::"
-}
-'''
-
 def main(args):
     print("Invoked main")
     return {
