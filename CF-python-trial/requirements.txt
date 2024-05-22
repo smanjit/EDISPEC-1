@@ -1,1 +1,3 @@
-lorem-text
+neo4j
+reportlab
+ibm-cos-sdk
