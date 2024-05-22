@@ -1,3 +1,8 @@
 def main(args):
-    return {"body": "success"}
+    return {
+          "headers": {
+              "Content-Type": "text/plain;charset=utf-8",
+          },
+          "body": "success"
+          }
 
