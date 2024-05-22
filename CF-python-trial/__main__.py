@@ -1,6 +1,22 @@
 from neo4j import GraphDatabase
-import ibm_boto3
-from ibm_botocore.client import Config, ClientError
+
+def get_versions(session, agency):
+    query = "MATCH (a:Agency {agencyID: $agency})-->(v:Version) RETURN v LIMIT 10"
+    result = session.run(query, agency=agency)
+    details = []
+    for record in result:
+        # print(record)
+        details.append(record['v']._properties["version"])
+        # details.append({
+        #   "label": record['v']._properties["version"],
+        #   "value": {
+        #     "input": {
+        #       "text": record['v']._properties["version"]
+        #     }
+        #   }
+        # })
+    return details
+
 
 def main(params):
 
@@ -9,7 +25,12 @@ def main(params):
      neo4j_password = 'x7lO8GKrglcmm4MYuHcBp_PJx23STanbAUKfnuj_FIg'
      driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
      details = []
-
+     agency = "X"
+     with driver.session() as session:
+          if agency:
+               details = get_versions(session, agency)
+               title += "a version"
+               
      return {
           # specify headers for the HTTP response
           # we only set the Content-Type in this case, to 
@@ -20,5 +41,5 @@ def main(params):
           
           ## use the text generator to create a response sentence
           #  with 10 words
-          "body": "God bless you",
+          "body": title + " God bless you",
       }
