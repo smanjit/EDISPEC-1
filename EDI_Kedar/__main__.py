@@ -9,5 +9,5 @@ def main(params):
           
           ## use the text generator to create a response sentence
           #  with 10 words
-          "body": "God bless you",
+          "body": "God bless you G",
       }
