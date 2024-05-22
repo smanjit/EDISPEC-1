@@ -30,8 +30,9 @@ def main(params):
      title = "Please select "
      with driver.session() as session:
           if agency:
-               details = get_versions(session, agency)
-               title += "a version"
+               details ="Hello"
+               #details = get_versions(session, agency)
+               #title += "a version"
                
      return {
           # specify headers for the HTTP response
