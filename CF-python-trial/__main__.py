@@ -43,5 +43,5 @@ def main(params):
           
           ## use the text generator to create a response sentence
           #  with 10 words
-          "body": details + " God bless you",
+          "body": details
       }
