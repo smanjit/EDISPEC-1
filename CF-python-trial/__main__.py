@@ -15,6 +15,7 @@ def get_versions(session, agency):
         #     }
         #   }
         # })
+    print(details)
     return details
 
 
@@ -41,5 +42,5 @@ def main(params):
           
           ## use the text generator to create a response sentence
           #  with 10 words
-          "body": title + " God bless you",
+          "body": details + " God bless you",
       }
