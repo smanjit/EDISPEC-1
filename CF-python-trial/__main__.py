@@ -1,5 +1,11 @@
+from neo4j import GraphDatabase
+
 def main(params):
-     words = 10
+     neo4j_uri = 'neo4j+s://a2903c3d.databases.neo4j.io'
+     neo4j_user = 'neo4j'
+     neo4j_password = 'x7lO8GKrglcmm4MYuHcBp_PJx23STanbAUKfnuj_FIg'
+     driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
+     details = []
 
      return {
           # specify headers for the HTTP response
